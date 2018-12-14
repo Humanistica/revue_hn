@@ -1,2 +1,3 @@
-# revue_hn
-Documents liés à la revue Humanités numériques
+# Revue *Humanités numériques*
+
+Cet entrepôt contient des documents et des données liés à la revue *Humanités numériques*.
