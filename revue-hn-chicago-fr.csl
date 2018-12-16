@@ -67,11 +67,11 @@
         <group delimiter=". ">
           <names variable="editor translator" delimiter=". ">
             <label form="verb" text-case="capitalize-first" suffix=" "/>
-            <name and="text" delimiter=", "/>
+            <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
           </names>
           <names variable="director" delimiter=". ">
             <label form="verb" text-case="capitalize-first" suffix=" "/>
-            <name and="text" delimiter=", "/>
+            <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
           </names>
         </group>
       </if>
@@ -83,11 +83,11 @@
         <group prefix=", " delimiter=", ">
           <names variable="container-author" delimiter=", ">
             <label form="verb" suffix=" "/>
-            <name and="text" delimiter=", "/>
+            <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
           </names>
           <names variable="editor translator" delimiter=", ">
             <label form="verb" suffix=" "/>
-            <name and="text" delimiter=", "/>
+            <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
           </names>
         </group>
       </if>
@@ -655,7 +655,7 @@
       <text macro="container-contributors"/>
       <text macro="edition"/>
       <text macro="locators-chapter"/>
-      <text macro="collection-title-journal" prefix=", " suffix=", "/>
+      <text macro="collection-title-journal" prefix=", " suffix=","/><!-- suffix=", " creates a bug when there are values for series and page, but empty volume and issue -->
       <text macro="locators"/>
       <text macro="collection-title" prefix=". "/>
       <text macro="issue"/>
