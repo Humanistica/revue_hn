@@ -53,12 +53,18 @@
       <term name="editor" form="verb-short">éd.</term>
       <term name="container-author" form="verb">par</term>
       <term name="translator" form="verb-short">trad.</term>
+      <term name="translator" form="short">trad.</term>
       <term name="editortranslator" form="verb">
         <single>édité et traduit par</single>
         <multiple>édité et traduit par</multiple>
       </term>
-      <term name="translator" form="short">trad.</term>
+      <term name="editortranslator" form="verb-short">
+        <single>éd. et trad.</single>
+        <multiple>éd. et trad.</multiple>
+      </term>
       <term name="in">dans</term>
+      <term name="et-al">et&#160;al.</term>
+      <term name="page-range-delimiter">-</term>
     </terms>
   </locale>
   <macro name="secondary-contributors">
@@ -230,7 +236,7 @@
             <group delimiter=". ">
               <text variable="title" text-case="title" quotes="true"/>
               <group delimiter=", ">
-                <text variable="reviewed-title" text-case="title" font-style="italic" prefix="Recension de "/>
+                <text variable="reviewed-title" text-case="title" font-style="italic" prefix="Compte rendu de "/>
                 <names variable="reviewed-author">
                   <label form="verb-short" text-case="lowercase" suffix=" "/>
                   <name and="text" delimiter=", "/>

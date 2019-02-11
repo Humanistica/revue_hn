@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="display-and-sort" page-range-format="chicago">
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="display-and-sort" page-range-format="expanded"><!-- "chicago" -->
   <info>
     <title>Chicago Manual of Style 17th edition (full note, French)</title>
     <id>http://www.zotero.org/styles/chicago-fullnote-bibliography-fr</id>
@@ -32,10 +32,14 @@
       <name>Emmanuel Château-Dutier</name>
       <uri>https://histart.umontreal.ca/repertoire-departement/vue/chateau-dutier-emmanuel/</uri>
     </contributor>
+    <contributor>
+      <name>Aurélien Berra</name>
+      <email>aurelien.berra@parisnanterre.fr</email>
+    </contributor>
     <category citation-format="note"/>
     <category field="generic-base"/>
-    <summary>Chicago format with full notes and bibliography, french translation</summary>
-    <updated>2018-08-04T20:00:52+00:00</updated>
+    <summary>Chicago format with full notes and bibliography, French translation</summary>
+    <updated>2019-02-11T12:00:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -59,15 +63,17 @@
       <term name="editor" form="verb-short">éd.</term>
       <term name="translator" form="verb-short">trad.</term>
       <term name="translator" form="short">trad.</term>
+      <term name="editortranslator" form="verb">
+        <single>édité et traduit par</single>
+        <multiple>édité et traduit par</multiple>
+      </term>
       <term name="editortranslator" form="verb-short">
         <single>éd. et trad.</single>
         <multiple>éd. et trad.</multiple>
       </term>
-      <term name="editortranslator" form="verb">
-        <single>Édité et traduit par</single>
-        <multiple>Édités et traduits par</multiple>
-      </term>
-      <term name="translator" form="short">trad.</term>
+      <term name="in">dans</term>
+      <term name="et-al">et&#160;al.</term>
+      <term name="page-range-delimiter">-</term>
     </terms>
   </locale>
   <macro name="editor-translator">
@@ -173,13 +179,13 @@
   </macro>
   <macro name="editor">
     <names variable="editor">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always"/>
+      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
       <label form="short" prefix=", "/>
     </names>
   </macro>
   <macro name="translator">
     <names variable="translator">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always"/>
+      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
       <label form="verb-short" prefix=", "/>
     </names>
   </macro>
@@ -203,7 +209,7 @@
   <macro name="contributors">
     <group delimiter=". ">
       <names variable="author">
-        <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always"/>
+        <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
         <substitute>
           <text macro="editor"/>
           <text macro="translator"/>
@@ -232,7 +238,7 @@
   </macro>
   <macro name="contributors-sort">
     <names variable="author">
-      <name name-as-sort-order="all" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always"/>
+      <name name-as-sort-order="all" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
       <substitute>
         <names variable="editor"/>
         <names variable="translator"/>
@@ -268,7 +274,7 @@
         <text variable="title"/>
       </else-if>
       <else-if variable="reviewed-author">
-        <text variable="title" font-style="italic" prefix="recension de "/>
+        <text variable="title" font-style="italic" prefix="Compte rendu de "/>
       </else-if>
       <else>
         <text variable="title" text-case="title" quotes="true"/>
@@ -585,7 +591,7 @@
               <text variable="page"/>
             </if>
             <else>
-              <text variable="number" prefix="n°&#160;"/>
+              <text variable="number" prefix="n&#x1D52;&#160;"/><!-- avoid degree sign ° -->
             </else>
           </choose>
         </group>
@@ -595,7 +601,7 @@
           <choose>
             <if variable="number">
               <!--There's a public law number-->
-              <text variable="number" prefix="Loi n°&#160;"/>
+              <text variable="number" prefix="Loi n&#x1D52;&#160;"/><!-- avoid degree sign ° -->
               <group delimiter=" ">
                 <!--change to label variable="section" as that becomes available -->
                 <text term="section" form="symbol"/>
@@ -1404,7 +1410,7 @@
       </choose>
     </layout>
   </citation>
-  <bibliography hanging-indent="true" et-al-min="11" et-al-use-first="7" subsequent-author-substitute="&#8212;&#8212;&#8212;" entry-spacing="0">
+  <bibliography hanging-indent="true" et-al-min="11" et-al-use-first="7" subsequent-author-substitute="&#8212;" entry-spacing="0"><!-- "&#8212;&#8212;&#8212;" -->
     <sort>
       <key macro="contributors-sort"/>
       <key variable="title"/>
