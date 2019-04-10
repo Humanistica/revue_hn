@@ -2,9 +2,8 @@
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="display-and-sort" page-range-format="expanded"><!-- "chicago" -->
   <info>
     <title>Chicago Manual of Style 17th edition (author-date, French)</title>
-    <id>http://www.humanisti.ca/revue/</id>
-    <!-- <id>http://www.zotero.org/styles/chicago-author-date-fr</id> -->
-    <!-- <link href="http://www.zotero.org/styles/chicago-author-date-fr" rel="self"/> -->
+    <id>http://www.zotero.org/styles/chicago-author-date-fr</id>
+    <link href="http://www.zotero.org/styles/chicago-author-date-fr" rel="self"/>
     <link href="http://www.chicagomanualofstyle.org/tools_citationguide.html" rel="documentation"/>
     <author>
       <name>Julian Onions</name>
