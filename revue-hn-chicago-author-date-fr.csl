@@ -32,7 +32,7 @@
     <category citation-format="author-date"/>
     <category field="generic-base"/>
     <summary>The author-date variant of the Chicago style: French translation</summary>
-    <updated>2019-04-10T12:17:49+00:00</updated>
+    <updated>2021-01-18T12:54:23+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -441,7 +441,8 @@
     </choose>
     <choose>
       <if type="webpage">
-        <text variable="container-title" text-case="title"/>
+        <!-- 2021-01-18 AB: here, italic for titles of websites, as per https://journals.openedition.org/revuehn/278#tocto1n4 -->
+        <text variable="container-title" text-case="title" font-style="italic"/>
       </if>
       <else-if type="legal_case" match="none">
         <group delimiter=" ">
