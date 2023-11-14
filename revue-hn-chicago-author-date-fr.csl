@@ -32,7 +32,7 @@
     <category citation-format="author-date"/>
     <category field="generic-base"/>
     <summary>The author-date variant of the Chicago style: French translation</summary>
-    <updated>2021-03-23T18:02:00+00:00</updated>
+    <updated>2023-11-14T13:27:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -478,10 +478,10 @@
     <choose>
       <if variable="issued">
         <group delimiter=" ">
-          <date variable="original-date" form="text" date-parts="year" prefix="(" suffix=")"/>
-          <date variable="issued">
-            <date-part name="year"/>
-          </date>
+            <date variable="issued">
+                <date-part name="year"/>
+            </date>
+            <date variable="original-date" form="text" date-parts="year" prefix="[" suffix="]"/>
         </group>
       </if>
       <else-if variable="status">
@@ -496,10 +496,10 @@
     <choose>
       <if variable="issued">
         <group delimiter=" ">
-          <date variable="original-date" form="text" date-parts="year" prefix="[" suffix="]"/>
-          <date variable="issued">
-            <date-part name="year"/>
-          </date>
+            <date variable="issued">
+                <date-part name="year"/>
+            </date>
+            <date variable="original-date" form="text" date-parts="year" prefix="[" suffix="]"/>
         </group>
       </if>
       <else-if variable="status">
@@ -656,7 +656,7 @@
       </group>
     </layout>
   </citation>
-  <bibliography hanging-indent="true" et-al-min="11" et-al-use-first="7" subsequent-author-substitute="&#8212;" entry-spacing="0"><!-- "&#8212;&#8212;&#8212;" -->
+  <bibliography hanging-indent="true" et-al-min="11" et-al-use-first="7" entry-spacing="0"> <!-- subsequent-author-substitute="&#8212;" --> <!-- "&#8212;&#8212;&#8212;" -->
     <sort>
       <key macro="contributors"/>
       <key variable="issued"/>
