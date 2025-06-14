@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0"
-  demote-non-dropping-particle="display-and-sort" page-range-format="expanded">
-  <!-- "chicago" -->
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="display-and-sort" page-range-format="expanded"><!-- "chicago" -->
   <info>
     <title>Chicago Manual of Style 17th edition (author-date, French)</title>
     <id>http://www.humanisti.ca/revue</id>
@@ -35,8 +33,7 @@
     <category field="generic-base"/>
     <summary>The author-date variant of the Chicago style: French translation</summary>
     <updated>2023-11-14T13:27:00+00:00</updated>
-    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a
-      Creative Commons Attribution-ShareAlike 3.0 License</rights>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
     <terms>
@@ -76,14 +73,12 @@
         <group delimiter=". ">
           <names variable="editor translator" delimiter=". ">
             <label form="verb" text-case="capitalize-first" suffix=" "/>
-            <name and="text" delimiter=", " delimiter-precedes-last="never"/>
-            <!-- never in FR -->
+            <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
             <et-al font-style="italic"/>
           </names>
           <names variable="director" delimiter=". ">
             <label form="verb" text-case="capitalize-first" suffix=" "/>
-            <name and="text" delimiter=", " delimiter-precedes-last="never"/>
-            <!-- never in FR -->
+            <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
             <et-al font-style="italic"/>
           </names>
         </group>
@@ -96,14 +91,12 @@
         <group prefix=", " delimiter=", ">
           <names variable="container-author" delimiter=", ">
             <label form="verb" suffix=" "/>
-            <name and="text" delimiter=", " delimiter-precedes-last="never"/>
-            <!-- never in FR -->
+            <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
             <et-al font-style="italic"/>
           </names>
           <names variable="editor translator" delimiter=", ">
             <label form="verb" suffix=" "/>
-            <name and="text" delimiter=", " delimiter-precedes-last="never"/>
-            <!-- never in FR -->
+            <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
             <et-al font-style="italic"/>
           </names>
         </group>
@@ -112,18 +105,14 @@
   </macro>
   <macro name="editor">
     <names variable="editor">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", "
-        delimiter-precedes-last="never"/>
-      <!-- always in EN, never in FR -->
+      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="never"/><!-- always in EN, never in FR -->
       <et-al font-style="italic"/>
       <label form="short" prefix=", "/>
     </names>
   </macro>
   <macro name="translator">
     <names variable="translator">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", "
-        delimiter-precedes-last="never"/>
-      <!-- always in EN, never in FR -->
+      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="never"/><!-- always in EN, never in FR -->
       <et-al font-style="italic"/>
       <label form="short" prefix=", "/>
     </names>
@@ -157,9 +146,7 @@
   <macro name="contributors">
     <group delimiter=". ">
       <names variable="author">
-        <name and="text" name-as-sort-order="first" sort-separator=", " delimiter=", "
-          delimiter-precedes-last="never"/>
-        <!-- always in EN, never in FR -->
+        <name and="text" name-as-sort-order="first" sort-separator=", " delimiter=", " delimiter-precedes-last="never"/><!-- always in EN, never in FR -->
         <et-al font-style="italic"/>
         <label form="short" prefix=", "/>
         <substitute>
@@ -175,9 +162,7 @@
   </macro>
   <macro name="contributors-short">
     <names variable="author">
-      <name form="short" and="text" delimiter=", " initialize-with=". "
-        delimiter-precedes-last="never"/>
-      <!-- never in FR -->
+      <name form="short" and="text" delimiter=", " initialize-with=". " delimiter-precedes-last="never"/><!-- never in FR -->
       <et-al font-style="italic"/>
       <substitute>
         <names variable="editor"/>
@@ -191,8 +176,7 @@
   <macro name="interviewer">
     <names variable="interviewer" delimiter=", ">
       <label form="verb" prefix=" " text-case="capitalize-first" suffix=" "/>
-      <name and="text" delimiter=", " delimiter-precedes-last="never"/>
-      <!-- never in FR -->
+      <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
       <et-al font-style="italic"/>
     </names>
   </macro>
@@ -209,15 +193,13 @@
         <if type="graphic report" match="any">
           <text macro="archive"/>
         </if>
-        <else-if
-          type="article-journal bill book chapter legal_case legislation motion_picture paper-conference"
-          match="none">
+        <else-if type="article-journal bill book chapter legal_case legislation motion_picture paper-conference" match="none">
           <text macro="archive"/>
         </else-if>
       </choose>
       <choose>
         <if type="webpage post-weblog" match="any">
-          <text macro="day-month"/>
+          <date variable="issued" form="text"/>
         </if>
       </choose>
       <choose>
@@ -264,12 +246,10 @@
             <group delimiter=". ">
               <text variable="title" text-case="title" quotes="true"/>
               <group delimiter=", ">
-                <text variable="reviewed-title" text-case="title" font-style="italic"
-                  prefix="Compte rendu de "/>
+                <text variable="reviewed-title" text-case="title" font-style="italic" prefix="Compte rendu de "/>
                 <names variable="reviewed-author">
                   <label form="verb-short" text-case="lowercase" suffix=" "/>
-                  <name and="text" delimiter=", " delimiter-precedes-last="never"/>
-                  <!-- never in FR -->
+                  <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
                   <et-al font-style="italic"/>
                 </names>
               </group>
@@ -280,8 +260,7 @@
               <text variable="title" text-case="title" font-style="italic" prefix="Recension de "/>
               <names variable="reviewed-author">
                 <label form="verb-short" text-case="lowercase" suffix=" "/>
-                <name and="text" delimiter=", " delimiter-precedes-last="never"/>
-                <!-- never in FR -->
+                <name and="text" delimiter=", " delimiter-precedes-last="never"/><!-- never in FR -->
                 <et-al font-style="italic"/>
               </names>
             </group>
@@ -366,8 +345,7 @@
         <text variable="container-title" prefix=" "/>
         <text variable="page" prefix=" "/>
       </else-if>
-      <else-if type="bill book graphic legal_case legislation motion_picture report song"
-        match="any">
+      <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
         <group prefix=". " delimiter=". ">
           <group>
             <text term="volume" form="short" text-case="capitalize-first" suffix=" "/>
@@ -437,8 +415,7 @@
         <choose>
           <if locator="page" match="none">
             <choose>
-              <if type="bill book graphic legal_case legislation motion_picture report song"
-                match="any">
+              <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
                 <choose>
                   <if variable="volume">
                     <group>
@@ -457,8 +434,7 @@
               </else>
             </choose>
           </if>
-          <else-if type="bill book graphic legal_case legislation motion_picture report song"
-            match="any">
+          <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
             <number variable="volume" form="numeric" suffix="&#160;: "/>
           </else-if>
         </choose>
@@ -502,10 +478,10 @@
     <choose>
       <if variable="issued">
         <group delimiter=" ">
-          <date variable="issued">
-            <date-part name="year"/>
-          </date>
-          <date variable="original-date" form="text" date-parts="year" prefix="[" suffix="]"/>
+            <date variable="issued">
+                <date-part name="year"/>
+            </date>
+            <date variable="original-date" form="text" date-parts="year" prefix="[" suffix="]"/>
         </group>
       </if>
       <else-if variable="status">
@@ -520,10 +496,10 @@
     <choose>
       <if variable="issued">
         <group delimiter=" ">
-          <date variable="issued">
-            <date-part name="year"/>
-          </date>
-          <date variable="original-date" form="text" date-parts="year" prefix="[" suffix="]"/>
+            <date variable="issued">
+                <date-part name="year"/>
+            </date>
+            <date variable="original-date" form="text" date-parts="year" prefix="[" suffix="]"/>
         </group>
       </if>
       <else-if variable="status">
@@ -536,8 +512,8 @@
   </macro>
   <macro name="day-month">
     <date variable="issued">
-      <date-part name="day" suffix=" "/>
       <date-part name="month"/>
+      <date-part name="day" prefix=" "/>
     </date>
   </macro>
   <macro name="collection-title">
@@ -573,7 +549,7 @@
   <macro name="event">
     <group>
       <text term="presented at" suffix=" "/>
-      <text variable="event" font-style="italic"/>
+      <text variable="event"/>
     </group>
   </macro>
   <macro name="description">
@@ -658,9 +634,7 @@
       </else>
     </choose>
   </macro>
-  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true"
-    disambiguate-add-names="true" disambiguate-add-givenname="true"
-    givenname-disambiguation-rule="primary-name" collapse="year">
+  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="true" disambiguate-add-givenname="true" givenname-disambiguation-rule="primary-name" collapse="year">
     <layout prefix="(" suffix=")" delimiter="&#160;; ">
       <group delimiter=", ">
         <choose>
@@ -682,9 +656,7 @@
       </group>
     </layout>
   </citation>
-  <bibliography hanging-indent="true" et-al-min="11" et-al-use-first="7" entry-spacing="0">
-    <!-- subsequent-author-substitute="&#8212;" -->
-    <!-- "&#8212;&#8212;&#8212;" -->
+  <bibliography hanging-indent="true" et-al-min="11" et-al-use-first="7" entry-spacing="0"> <!-- subsequent-author-substitute="&#8212;" --> <!-- "&#8212;&#8212;&#8212;" -->
     <sort>
       <key macro="contributors"/>
       <key variable="issued"/>
@@ -702,8 +674,7 @@
       <text macro="container-contributors"/>
       <text macro="edition"/>
       <text macro="locators-chapter"/>
-      <text macro="collection-title-journal" prefix=", " suffix=","/>
-      <!-- suffix=", " creates a bug when there are values for series and page, but empty volume and issue -->
+      <text macro="collection-title-journal" prefix=", " suffix=","/><!-- suffix=", " creates a bug when there are values for series and page, but empty volume and issue -->
       <text macro="locators"/>
       <text macro="collection-title" prefix=". "/>
       <text macro="issue"/>
