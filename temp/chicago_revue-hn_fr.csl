@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0"
   demote-non-dropping-particle="display-and-sort" page-range-format="expanded">
-  <!-- EN: page-range-format="chicago" -->
   <info>
-    <title>Chicago Manual of Style 17th edition (author-date, French)</title>
+    <title>Humanités numériques (Chicago 17th edition, author-date, French)</title>
     <id>https://github.com/Humanistica/revue_hn/</id>
     <link href="http://www.zotero.org/styles/chicago-author-date-fr_revuehn" rel="self"/>
     <link href="https://journals.openedition.org/revuehn/" rel="documentation"/>
@@ -46,7 +45,8 @@
       <term name="page-range-delimiter">-</term>
       <!-- @todo fix `event` macro: the type can be a masculine or feminine noun in
     FR, and the `presented at` term is always translated as "présenté" -->
-      <!--<term name="presented at">,</term>-->
+<!--      <term name="presented at">,</term>-->
+      <term name="presented at">présenté(e) à</term>
     </terms>
   </locale>
   <macro name="secondary-contributors">
@@ -125,6 +125,13 @@
       <if type="article-magazine article-newspaper review review-book" match="any">
         <text macro="container-title"/>
       </if>
+      <else-if variable="reviewed-author">
+        <names variable="reviewed-author">
+          <name and="text" delimiter=", " delimiter-precedes-last="never" suffix=", "/>
+          <et-al font-style="italic"/>
+        </names>
+        <text variable="title" text-case="title" font-style="italic"/>        
+      </else-if>
     </choose>
   </macro>
   <macro name="contributors">
@@ -187,8 +194,8 @@
       </choose>
       <choose>
         <if type="webpage post-weblog" match="any">
+<!--          <date variable="issued" form="text"/> -->
           <text macro="day-month"/>
-          <!-- <date variable="issued" form="text"/> in EN: why? -->
         </if>
       </choose>
       <choose>
@@ -230,7 +237,7 @@
         </group>
       </else-if>
       <else-if variable="reviewed-author">
-        <choose>
+        <!--<choose>
           <if variable="reviewed-title">
             <group delimiter=". ">
               <text variable="title" text-case="title" quotes="true"/>
@@ -255,7 +262,12 @@
               </names>
             </group>
           </else>
-        </choose>
+        </choose>-->
+            <!--<group delimiter=", " font-style="italic">-->
+            <!-- AB: valid? quotes are normally on `text` -->
+            <group delimiter=", ">
+              <text macro="substitute-title" quotes="true"/>
+            </group>
       </else-if>
       <else-if type="legal_case interview patent" match="any">
         <text variable="title"/>
@@ -390,11 +402,10 @@
       </if>
       <else-if type="article-journal">
         <choose>
-          <!-- Comment in EN:
-            CMoS 15.48: If the month or season is included, it is
-            enclosed in parentheses, and a space follows the colon.
-            Unfortunately we can't check the month in CSL v1.0.2.
-            -->
+          <!-- CMoS 15.48: If the month or season is included, it is
+          enclosed in parentheses, and a space follows the colon.
+          Unfortunately we can't check the month in CSL v1.0.2.
+          -->
           <if variable="volume issue" match="any">
             <text variable="page" prefix="&#160;: "/>
           </if>
@@ -508,7 +519,6 @@
     </choose>
   </macro>
   <macro name="date-sort">
-    <!-- macro from EN style: check use -->
     <date variable="issued">
       <date-part name="year"/>
     </date>
@@ -549,7 +559,7 @@
       </if>
     </choose>
   </macro>
-  <!-- EN:
+  <!--
       <macro name="event">
     <group delimiter=" ">
       <choose>
@@ -566,6 +576,8 @@
   -->
   <!-- @todo fix `event` macro: the type can be a masculine or feminine noun in
   FR, and the `presented at` term is always translated as "présenté" -->
+  <!-- tweak the term, e.g. "présenté(e) à",
+    or rephrase, e.g. <text variable="genre" prefix="(" suffix=")"/> -->
   <macro name="event">
     <group delimiter=" " prefix=", ">
       <text variable="event" font-style="italic"/>
@@ -619,13 +631,22 @@
           <text macro="day-month"/>
         </group>
       </else-if>
+      <else-if type="thesis">
+        <group prefix=". " delimiter=", ">
+          <group delimiter=" ">
+            <text variable="genre" text-case="capitalize-first"/>
+          </group>
+          <text variable="event-place" text-case="lowercase"/>
+        </group>
+        <text variable="publisher" prefix=" (" suffix=")"/>
+      </else-if>
       <else-if type="article-newspaper article-magazine personal_communication" match="any">
         <date variable="issued" form="text" prefix=", "/>
       </else-if>
       <else-if type="patent">
         <group delimiter=", " prefix=", ">
           <group delimiter=" ">
-            <!--EN comment: Needs Localization-->
+            <!-- Comment in EN style: Needs localization -->
             <text value="filed"/>
             <date variable="submitted" form="text"/>
           </group>
@@ -635,7 +656,7 @@
                 <text term="and"/>
               </if>
             </choose>
-            <!--EN comment: Needs Localization-->
+            <!-- Comment in EN style: Needs localization -->
             <text value="issued"/>
             <date variable="issued" form="text"/>
           </group>
@@ -644,11 +665,11 @@
       <else-if type="article-journal" match="any"/>
       <else>
         <group prefix=". " delimiter=", ">
-          <choose>
+        <!-- <choose>
             <if type="thesis">
               <text variable="genre" text-case="capitalize-first"/>
             </if>
-          </choose>
+          </choose>-->
           <text macro="publisher"/>
         </group>
       </else>
@@ -657,18 +678,18 @@
   <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true"
     disambiguate-add-names="true" disambiguate-add-givenname="true"
     givenname-disambiguation-rule="primary-name" collapse="year">
-    <!-- EN adds: after-collapse-delimiter="; " -->
+    <!-- EN style adds: after-collapse-delimiter="; " -->
     <layout prefix="(" suffix=")" delimiter="&#160;; ">
       <group delimiter=", ">
         <choose>
           <if variable="issued accessed" match="any">
-            <!-- EN only has `issued` -->
+            <!-- EN style only has `issued` -->
             <group delimiter=" ">
               <text macro="contributors-short"/>
               <text macro="date-in-text"/>
             </group>
           </if>
-          <!--- EN comment: comma before forthcoming and n.d. -->
+          <!--- Comment in EN style: Comma before forthcoming and n.d. -->
           <else>
             <group delimiter=", ">
               <text macro="contributors-short"/>
@@ -681,7 +702,7 @@
     </layout>
   </citation>
   <bibliography hanging-indent="true" et-al-min="11" et-al-use-first="7" entry-spacing="0">
-    <!-- EN: subsequent-author-substitute="&#8212;&#8212;&#8212;" -->
+    <!-- subsequent-author-substitute="&#8212;&#8212;&#8212;" -->
     <sort>
       <key macro="contributors"/>
       <!-- <key variable="issued"/> -->
@@ -701,7 +722,8 @@
       <text macro="edition"/>
       <text macro="locators-chapter"/>
       <text macro="collection-title-journal" prefix=", " suffix=","/>
-      <!-- EN has suffix=", " which creates a bug when there are values for series and page, but empty volume and issue -->
+      <!-- EN style has suffix=", "
+        which creates a bug when there are values for series and page, but empty volume and issue -->
       <text macro="locators"/>
       <text macro="collection-title" prefix=". "/>
       <text macro="issue"/>
