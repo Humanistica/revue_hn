@@ -43,9 +43,8 @@
       <term name="in">dans</term>
       <term name="et-al">et&#160;al.</term>
       <term name="page-range-delimiter">-</term>
-      <!-- @todo fix `event` macro: the type can be a masculine or feminine noun in
+      <!-- @TODO fix `event` macro: the type can be a masculine or feminine noun in
     FR, and the `presented at` term is always translated as "présenté" -->
-<!--      <term name="presented at">,</term>-->
       <term name="presented at">présenté(e) à</term>
     </terms>
   </locale>
@@ -194,7 +193,6 @@
       </choose>
       <choose>
         <if type="webpage post-weblog" match="any">
-<!--          <date variable="issued" form="text"/> -->
           <text macro="day-month"/>
         </if>
       </choose>
@@ -237,34 +235,6 @@
         </group>
       </else-if>
       <else-if variable="reviewed-author">
-        <!--<choose>
-          <if variable="reviewed-title">
-            <group delimiter=". ">
-              <text variable="title" text-case="title" quotes="true"/>
-              <group delimiter=", ">
-                <text variable="reviewed-title" text-case="title" font-style="italic"
-                  prefix="Compte rendu de "/>
-                <names variable="reviewed-author">
-                  <label form="verb-short" text-case="lowercase" suffix=" "/>
-                  <name and="text" delimiter=", " delimiter-precedes-last="never"/>
-                  <et-al font-style="italic"/>
-                </names>
-              </group>
-            </group>
-          </if>
-          <else>
-            <group delimiter=", ">
-              <text variable="title" text-case="title" font-style="italic" prefix="Compte rendu de "/>
-              <names variable="reviewed-author">
-                <label form="verb-short" text-case="lowercase" suffix=" "/>
-                <name and="text" delimiter=", " delimiter-precedes-last="never"/>
-                <et-al font-style="italic"/>
-              </names>
-            </group>
-          </else>
-        </choose>-->
-            <!--<group delimiter=", " font-style="italic">-->
-            <!-- AB: valid? quotes are normally on `text` -->
             <group delimiter=", ">
               <text macro="substitute-title" quotes="true"/>
             </group>
@@ -574,10 +544,10 @@
     </group>
   </macro>
   -->
-  <!-- @todo fix `event` macro: the type can be a masculine or feminine noun in
+  <!-- @TODO fix `event` macro: the type can be a masculine or feminine noun in
   FR, and the `presented at` term is always translated as "présenté" -->
-  <!-- tweak the term, e.g. "présenté(e) à",
-    or rephrase, e.g. <text variable="genre" prefix="(" suffix=")"/> -->
+  <!-- either tweak the term, e.g. "présenté(e) à",
+       or rephrase, e.g. <text variable="genre" prefix="(" suffix=")"/> -->
   <macro name="event">
     <group delimiter=" " prefix=", ">
       <text variable="event" font-style="italic"/>
@@ -665,11 +635,6 @@
       <else-if type="article-journal" match="any"/>
       <else>
         <group prefix=". " delimiter=", ">
-        <!-- <choose>
-            <if type="thesis">
-              <text variable="genre" text-case="capitalize-first"/>
-            </if>
-          </choose>-->
           <text macro="publisher"/>
         </group>
       </else>
@@ -678,12 +643,10 @@
   <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true"
     disambiguate-add-names="true" disambiguate-add-givenname="true"
     givenname-disambiguation-rule="primary-name" collapse="year">
-    <!-- EN style adds: after-collapse-delimiter="; " -->
     <layout prefix="(" suffix=")" delimiter="&#160;; ">
       <group delimiter=", ">
         <choose>
           <if variable="issued accessed" match="any">
-            <!-- EN style only has `issued` -->
             <group delimiter=" ">
               <text macro="contributors-short"/>
               <text macro="date-in-text"/>
@@ -702,10 +665,8 @@
     </layout>
   </citation>
   <bibliography hanging-indent="true" et-al-min="11" et-al-use-first="7" entry-spacing="0">
-    <!-- subsequent-author-substitute="&#8212;&#8212;&#8212;" -->
     <sort>
       <key macro="contributors"/>
-      <!-- <key variable="issued"/> -->
       <key macro="date-sort"/>
       <key variable="title"/>
     </sort>
@@ -723,7 +684,8 @@
       <text macro="locators-chapter"/>
       <text macro="collection-title-journal" prefix=", " suffix=","/>
       <!-- EN style has suffix=", "
-        which creates a bug when there are values for series and page, but empty volume and issue -->
+        which creates a bug when there are values for series and page,
+        but empty volume and issue -->
       <text macro="locators"/>
       <text macro="collection-title" prefix=". "/>
       <text macro="issue"/>
